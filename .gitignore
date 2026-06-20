@@ -1,0 +1,18 @@
+# Raw sources — contain sensitive data, do not commit
+_archive/
+
+# Local environment
+.env
+*.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
