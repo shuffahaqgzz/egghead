@@ -26,3 +26,95 @@
 - Sources: 35+ docs including framework versions, migration plans, skills architecture, memory/RAG, token optimization, deployment status
 - Pages: multi-agent-workflow-framework, hymes-multi-agent-architecture, ai-development-workflow-analysis, phase-5-migration-plan, deployment-and-operations, skills-architecture, research-and-reference, memory-and-rag-architecture, agent-operating-guide, token-optimization, human-approval-tool-and-gate-system
 - Total wiki: 30 pages (10 entities + 20 concepts)
+
+## [2026-06-20] create | Research & Design Plan for Egghead MAF
+- Created plans/01-research-design-plan.md (44KB, comprehensive)
+- Content: Current state audit, 4-framework methodology synthesis (MattPocock, Superpowers, BMAD, OMO), framework design, agent roster redesign, workflow lifecycle, skill architecture, runtime integration, token optimization, migration strategy, gap analysis, research questions
+- Updated index.md with Plans section
+- Lint script patched to handle Obsidian `\|` escape syntax
+- Total wiki: 31 pages (10 entities + 20 concepts + 1 plan)
+
+## [2026-06-20] update | Plan v0.2.0 — Gilang review applied
+- Applied all review feedback: generic role names (Intake, Orchestrator, Architect, Coder, Researcher, Security, QA, DevOps, Documenter, Operator)
+- Added Ponytail v4.7.0 (ladder of laziness) to token optimization strategies
+- Added BMAD adoption pitfalls comparison (adopt patterns vs install directly)
+- Answered all 8 research questions + 6 technical questions
+- Added new research items: Ponytail integration, Curator skill design, Hindsight external memory, MattPocock/Superpowers adaptation paths
+- Updated agent roster, responsibility matrix, workflow phases, skill architecture, communication channels, knowledge architecture
+- Version bumped to v0.2.0
+
+## [2026-06-20] archive-cleanup | Phase 1 — Archive reorganization
+- Created _archive/framework-level/ (48 files) and _archive/project-specific/ (13 files)
+- Framework-level: agent SOULs, workflow specs, research docs, skills plans, migration docs, Hermes internals
+- Project-specific: hermes-pingback E2E test docs (PRD, ARCHITECTURE, ADR, CODE_REVIEW, SECURITY_REVIEW, GATES, RUNBOOK, etc.)
+- Updated 9 wiki concept pages with corrected source references
+- Fixed plan frontmatter (added tags, sources fields)
+- Lint result: 0 orphans, 17 pre-existing broken links (missing pages, not caused by moves)
+
+## [2026-06-20] refactor | Phase 2 — SOUL refactoring (generic role names)
+- Created 10 refactored SOUL files in _archive/framework-level/ with generic role names:
+  - KUMACHII → intake-soul.md
+  - STELLA → orchestrator-soul.md
+  - SHAKA → architect-soul.md
+  - EDISON → coder-soul.md (includes Ponytail ladder of laziness)
+  - PYTHAGORAS → researcher-soul.md
+  - ATLAS → security-soul.md
+  - YORK → qa-soul.md
+  - LILITH → devops-soul.md
+  - BONNEY → documenter-soul.md
+  - STUSSY → operator-soul.md
+- Renamed 10 wiki entity pages: KUMACHII.md → intake.md, etc.
+- Updated all entity pages with new wikilinks ([[intake]], [[orchestrator]], etc.)
+- Updated 7 concept pages with new agent role names
+- Updated index.md entity section
+- All SOULs include: YAML frontmatter (layer, platform, access, workflow phases, skills), standardized format, skill integration references
+- Lint result: 0 orphans, 17 pre-existing broken links, 0 frontmatter issues
+
+## [2026-06-20] create | Phase 3 — Framework Documentation
+- Created 4 new concept pages: egghead-framework.md, workflow-lifecycle.md, skill-architecture.md, runtime-integration.md
+- Created 10 missing concept pages to fix broken wikilinks: hermes-internals, framework-selection-adr, code-review-workflow, hermes-pingback, honcho-memory-integration, kumachii-vs-hermes-tools, enowx-provider, rag-architecture, hermes-wiki-research
+- Updated SCHEMA.md tag taxonomy (added 30+ new tags)
+- Updated index.md with all new pages (46 total)
+- Fixed all broken wikilinks (17 → 0)
+- Lint result: 46 pages, 0 orphans, 0 broken links, 0 frontmatter issues
+
+## [2026-06-20] create | Gap Analysis documents (6 new concept pages)
+- Created cost-estimation-model.md — Token cost estimation per phase/agent/model with pricing tables and optimization savings
+- Created monitoring-observability-spec.md — Monitoring metrics, alert thresholds, incident response, dashboards
+- Created sprint-tracking-pattern.md — Sprint tracking adapted from BMAD to Hermes tools (todo, cronjob)
+- Created cicd-pipeline.md — Automated pipeline for framework changes (lint, test, verify, approve, deploy)
+- Created benchmark-suite.md — Agent performance metrics, benchmark tasks, baseline establishment, regression detection
+- Created multi-project-support.md — Multi-project context switching via LLM-Wiki extension and project registration
+- Updated index.md (52 total pages)
+- Lint result: 52 pages, 0 orphans, 0 broken links, 0 frontmatter issues
+
+## [2026-06-20] create | CONTEXT.md template adapted for Egghead MAF
+- Received CONTEXT.md template from Gilang (comprehensive, 25 sections)
+- Reviewed and adapted for Egghead MAF:
+  - Agent names updated: KUMACHII→Intake, STELLA→Orchestrator, etc.
+  - Skills directory adapted: .skills/ → ~/.hermes/skills/ (Hermes format)
+  - Added Egghead-specific sections: cost tracking, skill loading, sprint tracking
+  - Made platform channels configurable (placeholders)
+  - Removed Gilang-specific dashboard setup (moved to optional)
+- Created context-md-template.md with review notes and adapted template
+- Updated index.md (53 total pages)
+
+## [2026-06-20] cleanup | Wiki deduplication and archive
+- Archived 23 concept pages to _archive/framework-level/:
+  - 14 duplicates (agent-operating-guide, agent-roster, overall-architecture, gate-system, handoff-protocol, human-approval-tool-and-gate-system, coding-rules, token-optimization, memory-and-rag-architecture, skills-architecture, authority-hierarchy, rag-manifest, security-model, deployment-pattern)
+  - 5 outdated (ai-development-workflow-analysis, hymes-multi-agent-architecture, multi-agent-workflow-framework, phase-5-migration-plan, deployment-and-operations)
+  - 3 non-relevant (honcho-memory-integration, enowx-provider, kumachii-vs-hermes-tools)
+  - 1 low value (research-and-reference)
+- Merged authority-hierarchy content (8-rank hierarchy) into egghead-framework.md
+- Fixed 4 broken wikilinks (references to archived pages)
+- Category C pages verified: framework-selection-adr, code-review-workflow, hermes-internals — all unique content, no duplication
+- Final wiki: 30 pages, 0 orphans, 0 broken links, 0 frontmatter issues
+- Wiki reduced from 53 to 30 pages (43% reduction, no content loss)
+
+## [2026-06-20] update | Index reorganization and standing goal verification
+- Reorganized index.md: concept pages now categorized under proper section headers (Architecture, Hermes, Code, Cost, Planning)
+- Removed empty section stubs (Comparisons, Queries)
+- Added Archive summary section to index
+- Verified standing goal complete: all Category C reviewed, 19 archive items moved, authority-hierarchy merged
+- Final wiki: 30 active pages (10 entities + 19 concepts + 1 plan), 93 archived files
+- Lint: 0 orphans, 0 broken links, 0 frontmatter issues

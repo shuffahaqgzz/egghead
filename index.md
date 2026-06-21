@@ -2,57 +2,54 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-19 | Total pages: 30
+> Last updated: 2026-06-20 | Total pages: 30 (10 entities + 19 concepts + 1 plan)
 
 ## Entities
 
-- [[KUMACHII]] — Personal assistant + intake agent (Telegram primary)
-- [[STELLA]] — Orchestrator + workflow owner (Discord inter-agent, Telegram approvals)
-- [[SHAKA]] — Architect agent (ADRs, system design)
-- [[EDISON]] — Coding agent (TDD executor)
-- [[PYTHAGORAS]] — Research agent (read-only)
-- [[ATLAS]] — Security review agent (can block)
-- [[YORK]] — QA / reviewer agent (can block)
-- [[LILITH]] — DevOps agent (gated deploy)
-- [[BONNEY]] — Documentation + RAG agent
-- [[STUSSY]] — Monitoring + operations agent (can block)
+- [[intake]] — Personal assistant + intake layer (Telegram primary)
+- [[orchestrator]] — Workflow owner + gate enforcer (Discord + Telegram approvals)
+- [[architect]] — System design + ADRs agent
+- [[coder]] — Implementation + TDD agent
+- [[researcher]] — Research + analysis agent (read-only)
+- [[security]] — Security review + threat modeling agent (can block)
+- [[qa]] — Quality assurance + review agent (can block)
+- [[devops]] — Deployment + infrastructure agent (gated deploy)
+- [[documenter]] — Documentation + RAG agent
+- [[operator]] — Monitoring + operations agent (can block)
 
 ## Concepts
 
 ### Architecture & Framework
-- [[overall-architecture]] — Phase-gated multi-agent workflow with 10 specialized roles
-- [[agent-roster]] — 10 agents with roles, access levels, and delegation matrix
-- [[authority-hierarchy]] — Source precedence from docs down to chat history
-- [[multi-agent-workflow-framework]] — Framework v1.1.0 specification (KUMACHII-STELLA)
+- [[egghead-framework]] — Master framework spec (design principles, layers, roster, authority hierarchy)
+- [[framework-selection-adr]] — ADR: Why Egghead MAF over alternatives
+- [[workflow-lifecycle]] — Detailed 7-phase workflow documentation
+- [[runtime-integration]] — Hermes profile mapping, tools, knowledge architecture
 
-### Workflow & Lifecycle
-- [[gate-system]] — Quality gates (0–6) enforcing structured phase progression
-- [[handoff-protocol]] — Structured markdown template for agent-to-agent transfers
-- [[human-approval-tool-and-gate-system]] — Approval tool and gate decision system
-- [[hymes-multi-agent-architecture]] — Hermes multi-agent implementation stages
-
-### Security & Deployment
-- [[security-model]] — Container hardening, LAN trust, and ATLAS review
-- [[deployment-pattern]] — Docker Compose services and Hermes agent profiles
-- [[deployment-and-operations]] — Deployment status, E2E testing, live orchestration
+### Hermes & Integration
+- [[hermes-internals]] — Runtime config, setup, architecture reference
+- [[hermes-pingback]] — Health-check service (E2E test case)
+- [[rag-architecture]] — RAG architecture and authority hierarchy
+- [[hermes-wiki-research]] — LLM-Wiki research and implementation
 
 ### Code & Quality
-- [[coding-rules]] — TDD, review checklist, and architecture compliance
-- [[rag-manifest]] — Document ingestion tracking with authority levels
+- [[skill-architecture]] — Skill taxonomy, categories, and loading protocol
+- [[code-review-workflow]] — Two-stage code review process
+- [[benchmark-suite]] — Agent performance measurement and regression detection
+- [[cicd-pipeline]] — Automated pipeline for framework changes
 
-### Skills & Memory
-- [[skills-architecture]] — Skills propagation and mandatory loading
-- [[memory-and-rag-architecture]] — Honcho memory layer and RAG pipeline
+### Cost & Operations
+- [[cost-estimation-model]] — Token cost estimation per phase/agent/model
+- [[monitoring-observability-spec]] — Monitoring metrics, alerts, incident response
+- [[sprint-tracking-pattern]] — Sprint tracking adapted from BMAD to Hermes tools
 
-### Migration & Planning
-- [[phase-5-migration-plan]] — Migration from standalone to v1.1.0
-- [[agent-operating-guide]] — Master operating guide for all agents
+### Planning & Support
+- [[multi-project-support]] — Multi-project context switching via LLM-Wiki extension
+- [[context-md-template]] — CONTEXT.md template adapted for Egghead MAF (generic role names, Hermes format)
 
-### Research & Analysis
-- [[research-and-reference]] — Research findings, tool mapping, Hermes internals
-- [[ai-development-workflow-analysis]] — Framework comparison and token analysis
-- [[token-optimization]] — RTK, Caveman, CRG optimization strategies
+## Plans
 
-## Comparisons
+- [[01-research-design-plan]] — Refactor & design plan for Egghead AI-Driven Multi-Agent Framework
 
-## Queries
+## Archive
+
+~93 files in `_archive/framework-level/` and `_archive/project-specific/` (superseded, duplicated, outdated, or project-specific docs).

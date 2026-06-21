@@ -60,17 +60,17 @@ sha256: <hex digest of the raw content below the frontmatter>
   - Different → flag drift, update raw file, reprocess wiki pages that cite this source.
 
 ## Tag Taxonomy
-- **Architecture**: architecture, module, component, interface, orchestration, workflow, pipeline, state-machine, event-driven, pub-sub
+- **Architecture**: architecture, module, component, interface, orchestration, workflow, pipeline, state-machine, event-driven, pub-sub, framework, lifecycle, phases, gates
 - **Protocols**: protocol, a2a, mcp, acp, grpc, rest, websocket, message-queue
-- **Agents**: agent, multi-agent, subagent, coordinator, supervisor, worker, planner, executor, reviewer
+- **Agents**: agent, multi-agent, subagent, coordinator, supervisor, worker, planner, executor, reviewer, intake, orchestrator, architect, coder, researcher, security, qa, devops, documenter, operator
 - **Communication**: communication, inter-agent, handoff, delegation, broadcast, multicast
-- **Memory**: memory, shared-state, blackboard, context, session, persistence
+- **Memory**: memory, shared-state, blackboard, context, session, persistence, honcho, rag
 - **Planning**: planning, task-decomposition, goal, dependency, scheduling, priority
-- **Tools**: tool, tool-use, function-calling, capability, registry, discovery
-- **Evaluation**: evaluation, benchmark, metrics, testing, validation, scoring
-- **Deployment**: deployment, scaling, docker, kubernetes, cloud, edge
-- **Security**: security, sandbox, permission, isolation, trust, auth
-- **Meta**: comparison, architecture-diagram, code-pattern, best-practice, changelog, update, implementation, design-pattern
+- **Tools**: tool, tool-use, function-calling, capability, registry, discovery, skills, loading, discipline
+- **Evaluation**: evaluation, benchmark, metrics, testing, validation, scoring, code-review
+- **Deployment**: deployment, scaling, docker, kubernetes, cloud, edge, hermes-pingback
+- **Security**: security, sandbox, permission, isolation, trust, auth, threat-modeling
+- **Meta**: comparison, architecture-diagram, code-pattern, best-practice, changelog, update, implementation, design-pattern, adr, review, runtime, profiles, integration, wiki, knowledge-base, research, provider
 
 ## Page Thresholds
 - **Create a page** when an entity/concept appears in 2+ sources OR is central to one source

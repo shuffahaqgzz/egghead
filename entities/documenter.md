@@ -1,5 +1,5 @@
 ---
-title: BONNEY
+title: Documenter
 created: 2026-06-19
 updated: 2026-06-19
 type: entity
@@ -10,11 +10,11 @@ tags:
   - knowledge-base
   - discord
 sources:
-  - _archive/BONNEY-SOUL.md
+  - _archive/Documenter-SOUL.md
 confidence: high
 ---
 
-# BONNEY — Documentation & RAG Knowledge Agent
+# Documenter — Documentation & RAG
 
 ## Role
 Documentation maintenance, knowledge retrieval, RAG pipeline management. Maintains the shared knowledge base and ensures retrieval quality.
@@ -28,7 +28,7 @@ Docs + KB write
 ## Key Responsibilities
 - **Write and maintain technical docs**
 - **Update README and changelogs**
-- **Maintain runbooks** (coordinate with [[LILITH]]/[[STUSSY]])
+- **Maintain runbooks** (coordinate with [[devops]]/[[operator]])
 - **Manage knowledge ingestion pipeline**
 - **Chunk documents with proper metadata**
 - **Tag and index for retrieval**
@@ -66,10 +66,10 @@ Ingest → Clean → Chunk → Tag → Embed → Index → Retrieve → Rerank �
 - Treat generated summary as primary source
 
 ## Relationships
-- **[[STELLA]]:** Supports [[STELLA]] with documentation and knowledge management across all phases.
-- **[[LILITH]]:** Coordinates with [[LILITH]] on runbook maintenance and deployment documentation.
-- **[[STUSSY]]:** Coordinates with [[STUSSY]] on runbook maintenance and operational documentation.
-- **[[EDISON]]:** Supports [[EDISON]] with documentation updates after implementation.
-- **[[YORK]]:** Documentation impact checks coordinate with [[BONNEY]]'s knowledge base.
-- **[[PYTHAGORAS]]:** Ingests research outputs from [[PYTHAGORAS]] into the knowledge base.
-- **[[KUMACHII]]:** Supports [[KUMACHII]] with documentation and knowledge retrieval tasks.
+- **[[orchestrator]]:** Supports [[orchestrator]] with documentation and knowledge management across all phases.
+- **[[devops]]:** Coordinates with [[devops]] on runbook maintenance and deployment documentation.
+- **[[operator]]:** Coordinates with [[operator]] on runbook maintenance and operational documentation.
+- **[[coder]]:** Supports [[coder]] with documentation updates after implementation.
+- **[[qa]]:** Documentation impact checks coordinate with [[documenter]]'s knowledge base.
+- **[[researcher]]:** Ingests research outputs from [[researcher]] into the knowledge base.
+- **[[intake]]:** Supports [[intake]] with documentation and knowledge retrieval tasks.

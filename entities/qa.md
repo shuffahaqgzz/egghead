@@ -1,5 +1,5 @@
 ---
-title: YORK
+title: Qa
 created: 2026-06-19
 updated: 2026-06-19
 type: entity
@@ -9,11 +9,11 @@ tags:
   - reviewer
   - discord
 sources:
-  - _archive/YORK-SOUL.md
+  - _archive/Qa-SOUL.md
 confidence: high
 ---
 
-# YORK — QA / Reviewer Agent
+# QA — Quality Assurance & Review
 
 ## Role
 Independent validation of correctness and quality. Can block release for quality issues.
@@ -49,12 +49,12 @@ Review + test
 - Review its own implementation as final approval
 - Ignore failed tests
 - Approve incomplete stories
-- Write production code (that's [[EDISON]])
+- Write production code (that's [[coder]])
 
 ## Relationships
-- **[[STELLA]]:** Reports review results to [[STELLA]]. Gate 4 approval goes through [[STELLA]].
-- **[[EDISON]]:** Reviews code delivered by [[EDISON]]. Hands back for fixes if issues found.
-- **[[ATLAS]]:** Collaborates on Phase 4 — [[YORK]] handles QA/correctness, [[ATLAS]] handles security.
-- **[[SHAKA]]:** Validates architecture compliance against [[SHAKA]]'s architecture document and ADRs.
-- **[[LILITH]]:** Must approve before deployment. Review passes are prerequisite for Gate 5.
-- **[[BONNEY]]:** Checks documentation impact — coordinates with [[BONNEY]] for doc updates.
+- **[[orchestrator]]:** Reports review results to [[orchestrator]]. Gate 4 approval goes through [[orchestrator]].
+- **[[coder]]:** Reviews code delivered by [[coder]]. Hands back for fixes if issues found.
+- **[[security]]:** Collaborates on Phase 4 — [[qa]] handles QA/correctness, [[security]] handles security.
+- **[[architect]]:** Validates architecture compliance against [[architect]]'s architecture document and ADRs.
+- **[[devops]]:** Must approve before deployment. Review passes are prerequisite for Gate 5.
+- **[[documenter]]:** Checks documentation impact — coordinates with [[documenter]] for doc updates.
