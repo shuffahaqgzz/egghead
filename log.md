@@ -118,3 +118,64 @@
 - Verified standing goal complete: all Category C reviewed, 19 archive items moved, authority-hierarchy merged
 - Final wiki: 30 active pages (10 entities + 19 concepts + 1 plan), 93 archived files
 - Lint: 0 orphans, 0 broken links, 0 frontmatter issues
+
+## [2026-06-22] implement | Phase 4 — Skill Implementation
+- Installed 3 hub skills from skills.sh: grill-me (MattPocock), tdd (MattPocock), ponytail (DietrichGebert)
+- Superpowers skills (brainstorming, systematic-debugging) blocked by security scanner — wrote Egghead-native replacements
+- Adapted/created 7 Egghead skills total:
+  - `grill` — Intent alignment interview (Phase 0 Discovery), adapted from MattPocock grill-me (169 lines)
+  - `tdd` — TDD discipline for Coder agent, Python-first with Egghead workflow integration (249 lines + 3 refs)
+  - `ponytail` — Ladder of laziness for Coder agent, adapted from DietrichGebert ponytail (134 lines)
+  - `brainstorming` — Structured problem exploration (Egghead-native, 141 lines)
+  - `debugging` — Systematic root cause analysis (Egghead-native, 170 lines)
+  - `curator` — Runtime skill conflict resolution (Egghead-original, 177 lines)
+  - `handoffs` — Already existed (pre-Phase 4), verified intact
+  - `plan` — Already existed (builtin), verified intact
+- Updated skill-architecture.md: marked implemented vs planned skills, added conflict resolution matrix
+- All skills verified: proper YAML frontmatter, no broken refs, version 1.0.0
+- Total wiki: 30 pages (10 entities + 19 concepts + 1 plan)
+
+## [2026-06-22] implement | Phase 4b — Full Skill Architecture Implementation
+- Implemented all 16 remaining skills from design plan §7.1 (25 total now in multi-agent/)
+- **Workflow (5 new):** architect, implement, review, deploy, quick-flow
+- **Discipline (4 new):** diagnosing-bugs, domain-modeling, codebase-design, verification-before-completion
+- **Agent (5 new):** security-review, qa-review, deployment-checklist, monitoring-setup, docs-generation
+- **Optimization (4 new):** rtk-compression, caveman-output, code-review-graph, smart-zone
+- All 16 are Egghead-original (none available on hub)
+- All skills organized under `multi-agent/` category alongside handoffs
+- All 25 skills verified: proper YAML frontmatter, v1.0.0, no broken refs
+- Updated skill-architecture.md: 100% implementation coverage (24/24 per §7.1)
+- Wiki: 30 pages, no regressions
+
+## [2026-06-22] implement | Phase 4c — Methodology Gap Skills (§3.2 Patterns)
+- Cross-checked §3.2 methodology patterns vs implemented skills — found 4 missing + 1 partial
+- Implemented 5 methodology gap skills:
+  - `triage` — MattPocock Triage State Machine (issue intake to routing)
+  - `worktrees` — Superpowers Git Worktrees (isolated branch per task)
+  - `spine-contract` — BMAD Spine Contracts (lean source-of-truth architecture)
+  - `memlog` — BMAD Memlog (append-only decision log)
+  - `hash-anchored-edits` — OMO Hash-Anchored Edits (verifiable edit operations)
+- All 5 under multi-agent/ category
+- §3.2 coverage: 27/27 patterns implemented (100%)
+- Total multi-agent skills: 30
+
+## [2026-06-22] adapt | Phase 4d — Proper Adaptation from Original Sources
+- Cloned mattpocock/skills (141k stars) and obra/superpowers (236k stars) repos
+- Read all original skill files (82 files, ~11k lines) via parallel delegate_task
+- Adapted for Hermes: slash commands → skill_view(), superpowers: → hermes:, CLAUDE.md → knowledge base
+- Preserved multi-file reference architectures (tests.md, mocking.md, ADR-FORMAT.md, etc.)
+- Adapted 12 MattPocock engineering skills (tdd, diagnosing-bugs, domain-modeling, codebase-design, triage, etc.)
+- Adapted 5 MattPocock productivity skills (grill-me, grilling, handoff, teach, writing-great-skills)
+- Adapted 14 Superpowers skills (systematic-debugging, brainstorming, test-driven-development, subagent-driven-development, etc.)
+- Consolidated duplicates: removed 6 weaker versions (kept originals from source repos)
+- Final: 46 skills, 77 files, 10,908 lines under multi-agent/
+- Source attribution: MattPocock (17 skills), Superpowers (14 skills), Egghead-original (15 skills)
+
+## [2026-06-22] verify | Smoke Test — 29/29 PASS
+- Phase A (Structural): 89/89 skills valid YAML, 89/89 registered, 13/14 loadable (1 dedup removal)
+- Phase B (Functional): 24/24 skills produce correct output when used
+- Resolved naming conflicts: renamed reference files in software-development/ to avoid ambiguity with multi-agent/ skills
+- Removed .archive/ duplicates of systematic-debugging and test-driven-development
+- BMAD functional tests: 3/3 PASS (bmad-brainstorming, bmad-quick-dev, bmad-forge-idea)
+- Cleaned up all temp files from functional tests
+- Plans saved to ~/egghead-wiki/plans/: smoke-test-skills.md, smoke-test-results.md

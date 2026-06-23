@@ -1,7 +1,7 @@
 ---
 title: "Skill Architecture"
 created: 2026-06-20
-updated: 2026-06-20
+updated: 2026-06-22
 type: concept
 tags: [skills, architecture, loading, workflow, discipline]
 sources: []
@@ -19,52 +19,53 @@ Skill taxonomy dan loading protocol untuk [[egghead-framework]].
 3. **Composable** (MattPocock): Skills reference other skills via prose (`/skill-name`)
 4. **Conflict resolution**: Curator skill resolves conflicts between loaded skills
 
-## Skill Categories
+## Implemented Skills (Phase 4 Complete — 24/24)
 
-### Workflow Skills (User-Invoked)
+### Workflow Skills (User-Invoked) — 6 skills
 
-| Skill | Purpose | Phase | Based On |
-|-------|---------|-------|----------|
-| `/grill` | Intent alignment interview | 0 | MattPocock grilling |
-| `/plan` | Create PRD from brief | 1 | BMAD bmad-prd |
-| `/architect` | Design architecture + ADRs | 2 | BMAD bmad-architecture |
-| `/implement` | TDD implementation workflow | 3 | Superpowers TDD |
-| `/review` | Code review workflow | 4 | Superpowers code review |
-| `/deploy` | Deployment workflow | 5 | BMAD deployment |
-| `/quick-flow` | Abbreviated workflow for small tasks | All | BMAD Quick Flow |
+| Skill | Purpose | Phase | Status |
+|-------|---------|-------|--------|
+| `grill` | Intent alignment interview | 0 | ✅ Implemented |
+| `plan` | Create PRD / implementation plan | 1 | ✅ Built-in |
+| `brainstorming` | Structured problem exploration | 0/2 | ✅ Implemented |
+| `architect` | Design architecture + ADRs | 2 | ✅ Implemented |
+| `implement` | TDD implementation workflow | 3 | ✅ Implemented |
+| `review` | Two-stage code review | 4 | ✅ Implemented |
+| `deploy` | Deployment workflow | 5 | ✅ Implemented |
+| `quick-flow` | Abbreviated workflow for small tasks | All | ✅ Implemented |
 
-### Discipline Skills (Model-Invoked)
+### Discipline Skills (Model-Invoked) — 8 skills
 
-| Skill | Purpose | Agent | Based On |
-|-------|---------|-------|----------|
-| `tdd` | Red-green-refactor discipline | Coder | MattPocock TDD |
-| `ponytail` | Ladder of laziness before coding | Coder | Ponytail v4.7.0 |
-| `diagnosing-bugs` | Systematic debugging | Coder | MattPocock |
-| `domain-modeling` | Glossary + edge cases | Architect | MattPocock |
-| `codebase-design` | Module design + interfaces | Architect | MattPocock |
-| `systematic-debugging` | 4-phase root cause | Coder | Superpowers |
-| `verification-before-completion` | Pre-claim checks | All | Superpowers |
-| `curator` | Resolve skill conflicts, prioritize | Orchestrator | Custom |
+| Skill | Purpose | Agent | Status |
+|-------|---------|-------|--------|
+| `tdd` | Red-green-refactor discipline | Coder | ✅ Implemented |
+| `ponytail` | Ladder of laziness before coding | Coder | ✅ Implemented |
+| `diagnosing-bugs` | Structured bug diagnosis | Coder | ✅ Implemented |
+| `debugging` | Systematic root cause analysis | Coder | ✅ Implemented |
+| `domain-modeling` | Glossary + edge cases | Architect | ✅ Implemented |
+| `codebase-design` | Module design + interfaces | Architect | ✅ Implemented |
+| `verification-before-completion` | Pre-claim checks | All | ✅ Implemented |
+| `curator` | Resolve skill conflicts | Orchestrator | ✅ Implemented |
 
-### Agent Skills (Agent-Specific)
+### Agent Skills (Agent-Specific) — 6 skills
 
-| Skill | Purpose | Agent |
-|-------|---------|-------|
-| `handoff` | Structured agent-to-agent transfer | All |
-| `security-review` | Threat modeling + risk assessment | Security |
-| `qa-review` | Quality assurance checklist | QA |
-| `deployment-checklist` | Pre-deploy validation | DevOps |
-| `monitoring-setup` | Observability configuration | Operator |
-| `docs-generation` | Documentation from code | Documenter |
+| Skill | Purpose | Agent | Status |
+|-------|---------|-------|--------|
+| `handoffs` | Structured agent-to-agent transfer | All | ✅ Built-in |
+| `security-review` | Threat modeling + risk assessment | Security | ✅ Implemented |
+| `qa-review` | Quality assurance checklist | QA | ✅ Implemented |
+| `deployment-checklist` | Pre-deploy validation | DevOps | ✅ Implemented |
+| `monitoring-setup` | Observability configuration | Operator | ✅ Implemented |
+| `docs-generation` | Documentation from code | Documenter | ✅ Implemented |
 
-### Optimization Skills (Model-Invoked)
+### Optimization Skills (Model-Invoked) — 4 skills
 
-| Skill | Purpose | Based On |
-|-------|---------|----------|
-| `rtk-compression` | Command output compression | Hermes RTK |
-| `caveman-output` | Response compression | Hermes Caveman |
-| `code-review-graph` | Blast radius analysis | Hermes CRG |
-| `smart-zone` | Context optimization | Hermes Smart Zone |
+| Skill | Purpose | Status |
+|-------|---------|--------|
+| `rtk-compression` | Command output compression | ✅ Implemented |
+| `caveman-output` | Response compression | ✅ Implemented |
+| `code-review-graph` | Blast radius analysis | ✅ Implemented |
+| `smart-zone` | Context optimization | ✅ Implemented |
 
 ## Loading Protocol
 
@@ -101,39 +102,80 @@ description: "One-line description of what this skill does and when to use it."
 version: 1.0.0
 author: Egghead
 license: MIT
-platforms: [linux]
 metadata:
   hermes:
     tags: [category, tags]
-    category: [workflow|discipline|agent|optimization]
     related_skills: [other-skills]
 ---
 ```
 
-## Source Skills
+## Conflict Resolution Matrix
 
-### MattPocock Skills (Install + Adapt)
+| Conflict | Resolution |
+|----------|-----------|
+| TDD vs Ponytail on test scope | Ponytail wins for trivial (skip test), TDD wins for non-trivial |
+| Grill vs Plan on process | Grill wins if ambiguous, Plan wins if clear |
+| TDD vs Debugging on approach | TDD for new code, Debugging for existing bugs |
+| Ponytail vs everything on complexity | Ponytail is advisory — suggests simpler, doesn't block |
+| Brainstorming vs Plan on exploration | Brainstorming for decisions, Plan for implementation |
 
-Install: `npx skills@latest add mattpocock/skills`
+## Methodology Gap Skills (§3.2 Patterns)
 
-Key skills to adapt:
-- `grill-me` → `/grill` workflow skill
-- `tdd` → `tdd` discipline skill
-- `diagnosing-bugs` → `diagnosing-bugs` discipline skill
-- `domain-modeling` → `domain-modeling` discipline skill
-- `codebase-design` → `codebase-design` discipline skill
+Additional skills covering patterns from §3.2 methodology synthesis that
+weren't in §7.1 but were identified as adopted patterns.
 
-### Superpowers (Install + Adapt)
+### Pattern-Based Skills (5 skills)
 
-Key skills to adapt:
-- `test-driven-development` → `tdd` discipline skill
-- `systematic-debugging` → `systematic-debugging` discipline skill
-- `requesting-code-review` → `/review` workflow skill
-- `verification-before-completion` → `verification-before-completion` discipline skill
+| Skill | Source Pattern | Framework | Purpose |
+|-------|---------------|-----------|---------|
+| `triage` | Triage State Machine | MattPocock | Issue intake, categorize, prioritize, route, brief |
+| `worktrees` | Git Worktrees | Superpowers | Isolated branch per task, clean test baseline |
+| `spine-contract` | Spine Contracts | BMAD | Lean source-of-truth architecture doc |
+| `memlog` | Memlog | BMAD | Append-only decision/memory log |
+| `hash-anchored-edits` | Hash-Anchored Edits | OMO | Verifiable edit operations via checksum |
 
-### Ponytail (Install + Adapt)
+### Coverage Matrix: §3.2 Patterns
 
-Install from: `github.com/DietrichGebert/ponytail`
+| Framework | Pattern | Skill | Status |
+|-----------|---------|-------|--------|
+| MattPocock | Grilling Sessions | `grill` | ✅ |
+| MattPocock | CONTEXT.md | `domain-modeling` | ✅ |
+| MattPocock | Vertical Slice TDD | `tdd` | ✅ |
+| MattPocock | Two-Axis Invocation | Architecture design | ✅ |
+| MattPocock | Composable Skills | Cross-skill refs | ✅ |
+| MattPocock | Triage State Machine | `triage` | ✅ |
+| MattPocock | Domain Modeling | `domain-modeling` | ✅ |
+| Superpowers | Mandatory Skill Check | SOUL + `curator` | ✅ |
+| Superpowers | Subagent-Driven Dev | `implement` | ✅ |
+| Superpowers | 7-Stage Workflow | Workflow skills | ✅ |
+| Superpowers | Git Worktrees | `worktrees` | ✅ |
+| Superpowers | Two-Stage Review | `review` | ✅ |
+| Superpowers | Named Agent Consolidation | Agent-as-profile | ✅ |
+| Superpowers | Verification Before Completion | `verification-before-completion` | ✅ |
+| BMAD | Phase-Gated Architecture | Workflow lifecycle | ✅ |
+| BMAD | Scale-Adaptive | `quick-flow` | ✅ |
+| BMAD | Spine Contracts | `spine-contract` | ✅ |
+| BMAD | Memlog | `memlog` | ✅ |
+| BMAD | Implementation Readiness | `verification-before-completion` | ✅ |
+| BMAD | Agent-as-Persona | Agent-as-profile | ✅ |
+| OMO | Multi-Model Routing | Hermes runtime | ✅ |
+| OMO | Category-Based Intent | Task complexity routing | ✅ |
+| OMO | Trust-but-Verify | `verification` + `curator` | ✅ |
+| OMO | 54+ Lifecycle Hooks | Hermes plugin system | ✅ |
+| OMO | Session Continuity | Hermes session persistence | ✅ |
+| OMO | Hash-Anchored Edits | `hash-anchored-edits` | ✅ |
+| OMO | Background Agents | Hermes delegate + cron | ✅ |
 
-Key skill:
-- `ponytail` → `ponytail` discipline skill (ladder of laziness)
+**§3.2 Coverage: 27/27 patterns implemented (100%)**
+
+## Source Attribution
+
+| Skill | Source | Adaptation |
+|-------|--------|-----------|
+| `grill` | MattPocock `grill-me` | Full rewrite (stub was 7 lines) |
+| `tdd` | MattPocock `tdd` | Python-first, Egghead workflow |
+| `ponytail` | DietrichGebert `ponytail` | Egghead integration notes |
+| `brainstorming` | Egghead-native | Superpowers blocked by security |
+| `debugging` | Egghead-native | Superpowers blocked by security |
+| `curator` | Egghead-original | Novel conflict resolution |
+| All others | Egghead-original | Written from design plan §7.1 |
